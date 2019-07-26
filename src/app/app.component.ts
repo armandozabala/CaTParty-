@@ -6,5 +6,26 @@ import { Component } from '@angular/core';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
-  name = 'Angular';
+  party  = 'Party';
+  urlImage= "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/normalTime.jpg";
+  ban=false;
+
+  constructor(){
+     if(this.party === 'Party'){
+      this.urlImage = 'https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/partyTime.jpg';
+    }
+  }
+
+  changeText(){
+    this.ban = !this.ban;
+
+      if(this.ban){
+          this.party = "Miauuuu!!!"
+          
+      }else{
+          this.party = "Party";
+          
+      }
+      
+  }
 }
